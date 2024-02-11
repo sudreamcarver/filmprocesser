@@ -21,9 +21,9 @@ extern __bit shift_flag;
 #define keycol_1 P1_3 /*io bank*/
 #define keycol_2 P1_4 /*io bank*/
 
-#define keyline_0 P3_5 /*io bank*/
-#define keyline_1 P3_6 /*io bank*/
-#define keyline_2 P3_7 /*io bank*/
+#define keyline_0 P1_5 /*io bank*/
+#define keyline_1 P1_6 /*io bank*/
+#define keyline_2 P1_7 /*io bank*/
 unsigned char keyfunmap[3][3] = {
     {0x00, 0x01, 0x02}, {0x03, 0x04, 0x05}, {0x06, 0x07, 0x08}};
 unsigned char KeyStatu[3][3] = {
