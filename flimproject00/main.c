@@ -7,7 +7,9 @@
 #include "motor.h"
 #include "keyfun.h"
 
-unsigned char out1, out2;
+//unsigned char out1, out2;
+#define out1 P3_0
+#define out2 P3_1
 float T;
 unsigned char l = 20;
 unsigned char seconds = 0;
@@ -15,13 +17,13 @@ unsigned char target_min = 10;
 unsigned char spend_min = 0;
 extern unsigned char duty;
 extern __bit shift_flag;
-#define keycol_0 P1_0 /*io bank*/
-#define keycol_1 P1_1 /*io bank*/
-#define keycol_2 P1_2 /*io bank*/
+#define keycol_0 P1_2 /*io bank*/
+#define keycol_1 P1_3 /*io bank*/
+#define keycol_2 P1_4 /*io bank*/
 
-#define keyline_0 P3_0 /*io bank*/
-#define keyline_1 P3_1 /*io bank*/
-#define keyline_2 P3_2 /*io bank*/
+#define keyline_0 P3_5 /*io bank*/
+#define keyline_1 P3_6 /*io bank*/
+#define keyline_2 P3_7 /*io bank*/
 unsigned char keyfunmap[3][3] = {
     {0x00, 0x01, 0x02}, {0x03, 0x04, 0x05}, {0x06, 0x07, 0x08}};
 unsigned char KeyStatu[3][3] = {
@@ -118,16 +120,16 @@ void Timer0_fun(void) __interrupt 1
     switch (keyscannum)
     {
     case 0:
-        keycol_2 = 1;
-        keycol_0 = 0;
+        keyline_0= 1;
+        keyline_1= 0;
         break;
     case 1:
-        keycol_0 = 1;
-        keycol_1 = 0;
+        keyline_1 = 1;
+        keyline_2 = 0;
         break;
     case 2:
-        keycol_1 = 1;
-        keycol_2 = 0;
+        keyline_2 = 1;
+        keyline_0 = 0;
     default:
         break;
     }
