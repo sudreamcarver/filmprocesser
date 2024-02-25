@@ -183,6 +183,10 @@ void Timer1_fun(void) __interrupt 3
     {
         // beeper();
     }
+    else
+    {
+        beeper_out();
+    }
     TL1 = 0x00;
     TH1 = 0x4c; // 50ms
 }
