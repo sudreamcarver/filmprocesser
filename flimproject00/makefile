@@ -1,6 +1,6 @@
 CC = sdcc
 CFLAGS = -c
-OBJS = main.rel LCD1602.rel DS18b20.rel pwm.rel motor.rel keyfun.rel minsconts.rel
+OBJS = main.rel LCD1602.rel DS18b20.rel pwm.rel motor.rel keyfun.rel minsconts.rel beeper.rel
 
 all: main.ihx
 	@echo "Build complete------"
