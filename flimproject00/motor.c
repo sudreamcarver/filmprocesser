@@ -1,16 +1,16 @@
-unsigned char duty = 10;
+unsigned char duty = 7;
 __bit shift_flag = 0;
 void speed_up(void)
 {
     duty++;
-    if (duty > 10)
-        duty = 10;
+    if (duty > 9)
+        duty = 9;
 }
 void speed_down(void)
 {
     duty--;
-    if (duty < 1)
-        duty = 1;
+    if (duty < 5)
+        duty = 5;
 }
 void shift_flag_turn(void)
 {
