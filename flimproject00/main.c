@@ -1,6 +1,6 @@
 #include <at89x52.h>
 #include "minsconts.h"
-// #include "beeper.h"
+#include "beeper.h"
 #include "LCD1602.h"
 #include "DS18b20.h"
 #include "pwm.h"
@@ -181,11 +181,7 @@ void Timer1_fun(void) __interrupt 3
     }
     if ((spend_min - 1) == target_min)
     {
-        // beeper();
-    }
-    else
-    {
-        beeper_out();
+        beeper();
     }
     TL1 = 0x00;
     TH1 = 0x4c; // 50ms
